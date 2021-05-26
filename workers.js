@@ -38,5 +38,5 @@ let workers = [
     {
         name: 'Ted',
         rate: 20
-    },
+    }
 ];

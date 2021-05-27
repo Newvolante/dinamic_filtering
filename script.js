@@ -10,6 +10,10 @@ $(function() {
         console.log('Iterating ' + person.name);
         
         let $newRow = $('<tr class="row"></tr>');
+        let $name = $('<td>' + person.name + '</td>');
+        let $rate = $('<td>' + person.rate + '</td>');
+        $newRow.append($name)
+               .append($rate);
         
         rows.push({
             person: person,
@@ -17,15 +21,11 @@ $(function() {
         })
     });
     
-    // console.log(rows);
+    console.log(rows);
 
     rows.forEach(item => {
         let $tableBody = $('tbody');
-        let $name = $('<td>' + item.person.name + '</td>');
-        let $rate = $('<td>' + item.person.rate + '</td>');
         $tableBody.append(item.row);
-        item.row.append($name)
-                .append($rate);
     });
 
     

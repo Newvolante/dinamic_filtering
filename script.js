@@ -1,19 +1,33 @@
-$(document).ready(function() {
+$(function() {
     console.log('Script linked correctly to the page');
     console.assert(workers, 'Array of workers not found');
 
+    let rows = [];
+    
     /*creates a row for each element of the workers array and
-    appends it to the table */
+    add it into the array */
     workers.forEach(person => {
         console.log('Iterating ' + person.name);
-
-        let $tableBody = $('tbody');
-        let $newRow = $('<tr class="row"><tr>');
-        let $name = $('<td>' + person.name + '<td>');
-        let $rate = $('<td>' + person.rate + '<td>');
         
-        $tableBody.append($newRow);
-        $newRow.append($name)
-                    .append($rate);
+        let $newRow = $('<tr class="row"></tr>');
+        
+        rows.push({
+            person: person,
+            row: $newRow
+        })
     });
+    
+    // console.log(rows);
+
+    rows.forEach(item => {
+        let $tableBody = $('tbody');
+        let $name = $('<td>' + item.person.name + '</td>');
+        let $rate = $('<td>' + item.person.rate + '</td>');
+        $tableBody.append(item.row);
+        item.row.append($name)
+                .append($rate);
+    });
+
+    
+
 });

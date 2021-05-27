@@ -28,6 +28,18 @@ $(function() {
         $tableBody.append(item.row);
     });
 
+    $('input#sort').on('click', function() {
+        let $min = $('input#min').val();
+        let $max = $('input#max').val();
+        
+        rows.forEach(item => {
+            if (item.person.rate >= $min && item.person.rate <= $max) {
+                item.row.show();
+            } else item.row.hide();
+        })
+    });
+    
+
     
 
 });

@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <title>Dinamic filtering</title>
 </head>
+
 <body>
-    
+
+    <label for="min">Min</label>
+    <input type="number" id="min">
+    <br />
+    <label for="max">max</label>
+    <input type="number" id="max">
+    <br />
+    <br />
+    <input type="button" name="" id="sort" value="Sort table">
+    <br>
+    <br>
     <table>
         <thead>
             <tr>
@@ -28,4 +40,5 @@
     <script src="./workers.js"></script>
     <script src="./script.js"></script>
 </body>
+
 </html>
